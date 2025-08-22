@@ -1,0 +1,74 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library", "cc_test")
+
+cc_binary(
+    name = "intro",
+    srcs = ["src/intro.cc"],
+    copts = [
+        "-std=c++23",
+        "-stdlib=libc++",
+        # Diagnostic flags
+        ## collections
+        "-Wall",
+        "-Wconversion",
+        "-Wdeprecated",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wthread-safety",
+        "-Wtype-limits",
+        "-Wuninitialized",
+        "-Wunknown-pragmas",
+        "-Wunreachable-code",
+        "-Wunsafe-buffer-usage",
+        ## fine grained
+        "-Wcast-align",
+        "-Wdouble-promotion",
+        "-Wcomma",
+        "-Wcomment",
+        "-Wfloat-equal",
+        "-Wsuggest-destructor-override",
+        "-Wsuggest-override",
+        "-Wsuper-class-method-mismatch",
+        "-Wunaligned-access",
+        "-Wundeclared-selector",
+        "-Wundef-prefix",
+        "-Wundefined-func-template",
+        "-Wundefined-reinterpret-cast",
+        "-Wundefined-var-template",
+        "-Wvector-conversion",
+        "-Wweak-vtables",
+        "-Wzero-as-null-pointer-constant",
+        # Sanitizers
+        "-fsanitize=address,thread,memory,undefined,leak,type,safe-stack",  # cfi
+        "-fsafe-buffer-usage-suggestions",
+        # "-fvisibility=hidden",
+        # "-flto",
+        # "-funique-source-file-names",
+        # Code Generation Options
+        # "-fno-ident",
+        # "-march=native",
+        # "-mtune=native",
+        # Target-independent compilation options
+        "-faligned-allocation",
+        # Hardening flags
+        "-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
+    ],
+    linkopts = ["-stdlib=libc++"],
+)
+
+# cc_library(
+#     name = "lib",
+#     srcs = glob([
+#         "src/*.cc",
+#         # "!src/intro.cc",
+#     ]),
+#     hdrs = ["include/*.h"],
+# )
+
+# cc_test(
+#     name = "test",
+#     srcs = ["src/intro_test.cc"],
+#     deps = [
+#         "//src:taopp-in-modern-cpp",
+#         "@googletest//:gtest_main",
+#     ],
+# )

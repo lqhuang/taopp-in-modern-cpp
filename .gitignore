@@ -1,3 +1,9 @@
+/bazel-*
+*.bazel.lock
+
+# vscode
+!.vscode/settings.json
+
 # Prerequisites
 *.d
 
@@ -39,3 +45,5 @@
 
 # debug information files
 *.dwo
+
+
