@@ -1,2 +1,6 @@
 common --enable_bzlmod
+common --incompatible_enable_cc_toolchain_resolution
 
+# startup --host_jvm_args=-Xms4g
+# startup --host_jvm_args=-XX:+UseZGC
+# startup --host_jvm_args=-XX:+ZGenerational

@@ -6,6 +6,8 @@ cc_binary(
     copts = [
         "-std=c++23",
         "-stdlib=libc++",
+        # "-fmodules",
+        # "-fbuiltin-module-map",
         # Diagnostic flags
         ## collections
         "-Wall",
@@ -38,7 +40,8 @@ cc_binary(
         "-Wweak-vtables",
         "-Wzero-as-null-pointer-constant",
         # Sanitizers
-        "-fsanitize=address,thread,memory,undefined,leak,type,safe-stack",  # cfi
+        # "-fsanitize=address,thread,memory,undefined,leak,type,safe-stack,cfi",
+        # "-fsanitize=undefined",
         "-fsafe-buffer-usage-suggestions",
         # "-fvisibility=hidden",
         # "-flto",
@@ -52,7 +55,6 @@ cc_binary(
         # Hardening flags
         "-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_EXTENSIVE",
     ],
-    linkopts = ["-stdlib=libc++"],
 )
 
 # cc_library(
