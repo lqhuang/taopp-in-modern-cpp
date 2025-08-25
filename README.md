@@ -25,6 +25,8 @@ Current java-runtime: OpenJDK Runtime Environment (build 24+36) by Azul Systems,
 
 Then try to build by `make build`. If there is no error, that's all settled.
 
+Get our "Hello, world!" via `make run`.
+
 Besides, run `make refresh-compile-commands` to generate compile commands for `clangd`. It helps you to setup IDE like VSCode or Clion.
 
 Start coding!

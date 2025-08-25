@@ -27,7 +27,7 @@ build:
 	@${BAZEL} build //ch01:intro --toolchain_resolution_debug='@bazel_tools//tools/cpp:toolchain_type'
 
 run:
-	@${BAZEL} build //ch01:intro
+	@${BAZEL} run //ch01:intro
 
 # == analysis ==
 
